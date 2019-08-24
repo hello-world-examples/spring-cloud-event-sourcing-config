@@ -3,16 +3,6 @@ spring:
     active: development
 ---
 server:
-  contextPath: /uaa
-security:
-  user:
-    password: password
-  enable-csrf: false
-spring:
-  profiles: cloud
-security.ignored: /resources/**
----
-server:
   port: 8181
   contextPath: /uaa
 security:
@@ -23,10 +13,11 @@ logging.level.org.springframework.security: DEBUG
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://192.168.99.100:3306/dev
+    url: jdbc:mysql://10.0.0.252:3306/userservice?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
-    password: dbpass
+    password: Password123!
     initialize: true
+    driver-class-name: com.mysql.cj.jdbc.Driver
 security.ignored: /resources/**
 ---
 server:
