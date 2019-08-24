@@ -5,10 +5,10 @@ spring:
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://10.0.0.252:3306/accountservice
+    url: jdbc:mysql://10.0.0.252:3306/accountservice?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
-    password: Password
-    initialize: false
+    password: Password123!
+    initialize: true
     driver-class-name: com.mysql.cj.jdbc.Driver
 security:
   oauth2:
