@@ -8,7 +8,7 @@ spring:
     host: 10.0.0.252
     port: 6379
   datasource:
-    url: jdbc:mysql://10.0.0.252:3306/catalogservice1?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/catalogservice1?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: Password123!
     initialize: true
