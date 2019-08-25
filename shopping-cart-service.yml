@@ -4,8 +4,6 @@ spring:
 ---
 spring:
   profiles: cloud
-  datasource:
-    platform: mysql
 security:
   oauth2:
     resource:
@@ -16,22 +14,20 @@ security:
 ---
 spring:
   profiles: development
-  jpa:
-    show_sql: false
-    database: MYSQL
-    generate-ddl: true
   datasource:
-    url: jdbc:mysql://192.168.99.100:3306/dev
+    url: jdbc:mysql://localhost:3306/cartservice?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
-    password: dbpass
+    password: Password123!
+    platform: mysql
 security:
   oauth2:
     resource:
-      userInfoUri: http://192.168.99.100:8181/uaa/user
+      userInfoUri: http://10.0.0.252:8181/uaa/user
     client:
       client-id: acme
-      access-token-uri: http://192.168.99.100:8787
+      access-token-uri: http://10.0.0.252:8787
   enable-csrf: false
+  ignored: /api/**
 eureka:
   instance:
     prefer-ip-address: true
@@ -39,7 +35,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://10.0.0.252:8761/eureka/
 ---
 spring:
   profiles: docker
