@@ -3,8 +3,10 @@ spring.profiles.active: development
 spring:
   profiles: development
   neo4j:
-    host: ${SPRING_NEO4J_HOST:localhost}
+    host: ${SPRING_NEO4J_HOST:10.0.0.252}
     port: ${SPRING_NEO4J_PORT:7474}
+    username: neo4j
+    password: Password123!
 eureka:
   instance:
     prefer-ip-address: true
